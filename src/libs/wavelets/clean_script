@@ -1,0 +1,6 @@
+
+find . -name "*.html" -exec rm {} \;
+find . -name "*.class" -exec rm {} \;
+find . -name "*.css" -exec rm {} \;
+find . -name "*~" -exec rm {} \;
+rm -f package-list

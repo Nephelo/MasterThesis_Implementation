@@ -1,0 +1,12 @@
+
+  To generate the javadoc documentation for the test files
+and packages in this directory:
+
+  1. Create the local directory "doc"
+ 
+  2. Use the javadoc command below
+
+javadoc -private -d doc -classpath ".;e:\jdk1.2.2\jre\lib\rt.jar" *.java dataInput double_vec experimental sort wavelet_util wavelets
+
+  Obviously this is for Windows.  Change the directory paths as needed
+for UNIX or Linux.
