@@ -78,14 +78,14 @@ public class PrivacyTransformationHandler {
     private boolean isConflictingOpertation(TransformationTypes type, double configurationValue) {
         if(type.equals(TransformationTypes.CutJumps)) {
             for(TransformationConfiguration transformation : transformations) {
-                if(transformation.type.equals(TransformationTypes.Denoising) &&
+                if(isDenoisingType(transformation.type) &&
                         configurationValue <= transformation.configurationValue) {
                     return true;
                 }
             }
         }
 
-        if(type.equals(TransformationTypes.Denoising)) {
+        if(isDenoisingType(type)) {
             for(TransformationConfiguration transformation : transformations) {
                 if(transformation.type.equals(TransformationTypes.CutJumps) &&
                         configurationValue <= transformation.configurationValue) {
@@ -97,14 +97,24 @@ public class PrivacyTransformationHandler {
         return false;
     }
 
+    private boolean isDenoisingType(TransformationTypes type) {
+        return type.equals(TransformationTypes.DenoiseHard) || type.equals(TransformationTypes.DenoiseSoft) || type.equals(TransformationTypes.DenoiseNGG);
+    }
+
     private PrivacyTransformation geTransformationFromType(TransformationTypes type) {
         switch (type) {
-            case AddNoise:
-                return new AddNoise();
+            case AddNoiseGauss:
+                return new AddNoiseGauss();
+            case AddNoiseLaplace:
+                return new AddNoiseLaplace();
             case CutJumps:
                 return new CutJumps();
-            case Denoising:
-                return new Denoising();
+            case DenoiseHard:
+                return new DenoiseHard();
+            case DenoiseSoft:
+                return new DenoiseSoft();
+            case DenoiseNGG:
+                return new DenoiseNGG();
             case IdentityTransformation:
                 return new IdentityTransformation();
             case RemoveLevel:

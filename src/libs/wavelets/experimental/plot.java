@@ -1,5 +1,5 @@
 
-package experimental;
+package libs.wavelets.experimental;
 
 import java.io.*;
 

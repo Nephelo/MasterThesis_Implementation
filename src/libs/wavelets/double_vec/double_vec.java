@@ -1,5 +1,5 @@
 
-package double_vec;
+package libs.wavelets.double_vec;
 
 /**
  *

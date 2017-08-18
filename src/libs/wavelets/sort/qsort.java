@@ -1,5 +1,5 @@
 
-package sort;
+package libs.wavelets.sort;
 
 /**
   <p>

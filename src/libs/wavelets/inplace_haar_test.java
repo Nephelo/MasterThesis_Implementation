@@ -1,4 +1,4 @@
-
+package libs.wavelets;
 /**
    Test code for the inplace_haar.java wavelets code.
 
@@ -21,7 +21,7 @@
 
 // package test;
 
-import wavelet_util.*;
+import libs.wavelets.wavelet_util.*;
 
 class inplace_haar_test {
 
@@ -47,7 +47,7 @@ class inplace_haar_test {
    */
   private void wavelet_test( double[] vals )
   {
-    wavelets.inplace_haar haar = new wavelets.inplace_haar();
+    libs.wavelets.wavelets.inplace_haar haar = new libs.wavelets.wavelets.inplace_haar();
 
     System.out.println("test data: ");
     pr_vals( vals );
@@ -84,7 +84,7 @@ class inplace_haar_test {
       mainRef.wavelet_test(vals2);
       
       // Calculate the wavelet spectrum
-      wavelets.inplace_haar haar = new wavelets.inplace_haar();
+      libs.wavelets.wavelets.inplace_haar haar = new libs.wavelets.wavelets.inplace_haar();
       haar.wavelet_spectrum( vals2 );
       
       // output spectrum to "foofile"

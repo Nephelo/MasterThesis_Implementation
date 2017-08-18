@@ -35,7 +35,6 @@ public class CutJumps implements PrivacyTransformation {
         IntStream.range(0, dataRow.length)
                 .forEach(index -> {
                     int sign = (int) Math.signum(coefficientsForThreshold[index]);
-                    //int sign = (int) Math.signum(dataRow[index]);
                     if(sign == 0) {
                         sign = 1;
                     }

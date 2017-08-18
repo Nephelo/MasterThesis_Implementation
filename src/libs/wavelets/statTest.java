@@ -1,9 +1,9 @@
+package libs.wavelets;
 
-
-import dataInput.*;
-import wavelets.*;
-import wavelet_util.binary;
-import experimental.*;
+import libs.wavelets.dataInput.*;
+import libs.wavelets.wavelets.*;
+import libs.wavelets.wavelet_util.binary;
+import libs.wavelets.experimental.*;
 
 /**
   Test the experimental code to generate a normal curve
@@ -14,7 +14,7 @@ import experimental.*;
  */
 class statTest {
 
-  public static void print_curve( statistics.bell_info info,
+  public static void print_curve( libs.wavelets.experimental.statistics.bell_info info,
 				  statistics.point curve[] )
   {
     System.out.println("#");
@@ -37,7 +37,7 @@ class statTest {
       ts.setSize( len );
       double vals[] = ts.getArray();
 
-      wavelets.inplace_haar haar = new inplace_haar();
+      libs.wavelets.wavelets.inplace_haar haar = new inplace_haar();
       haar.wavelet_calc( vals );
       haar.order();
       int end = vals.length;

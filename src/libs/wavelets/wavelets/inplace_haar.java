@@ -1,7 +1,7 @@
 
-package wavelets;
+package libs.wavelets.wavelets;
 
-import wavelet_util.*;
+import libs.wavelets.wavelet_util.*;
 
 /**
  *

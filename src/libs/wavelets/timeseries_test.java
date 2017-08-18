@@ -1,6 +1,7 @@
+package libs.wavelets;
 
-import wavelet_util.*;
-import dataInput.*;
+import libs.wavelets.wavelet_util.*;
+import libs.wavelets.dataInput.*;
 
 /**
 <p>
@@ -30,8 +31,8 @@ class timeseries_test {
 	
 	if (vals != null) {
 	  gnuplot3D pts;
-	  
-	  wavelets.inplace_haar haar = new wavelets.inplace_haar();
+
+		libs.wavelets.wavelets.inplace_haar haar = new libs.wavelets.wavelets.inplace_haar();
 	  haar.wavelet_calc( vals );
 	  haar.order();
 	  pts = new gnuplot3D(vals, "coef" );

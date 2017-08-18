@@ -1,7 +1,5 @@
 
-package wavelets;
-
-import java.util.*;
+package libs.wavelets.wavelets;
 
 
 /**

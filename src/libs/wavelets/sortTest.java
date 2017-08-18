@@ -1,8 +1,8 @@
+package libs.wavelets;
 
+import libs.wavelets.sort.generic_sort;
 
 import java.util.Random;
-
-import sort.*;
 
 /**
 <p>

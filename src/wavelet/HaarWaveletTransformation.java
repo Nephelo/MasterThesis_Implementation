@@ -2,7 +2,7 @@ package wavelet;
 
 import data.HaarData;
 import data.TimeSeries;
-import wavelets.simple_haar;
+import libs.wavelets.wavelets.simple_haar;
 
 public class HaarWaveletTransformation {
 

@@ -1,11 +1,12 @@
 
 
-package wavelets;
-
-import java.util.*;
+package libs.wavelets.wavelets;
 
 import data.HaarData;
-import wavelet_util.*;
+import libs.wavelets.wavelet_util.binary;
+
+import java.util.Arrays;
+import java.util.Vector;
 
 /**
  *

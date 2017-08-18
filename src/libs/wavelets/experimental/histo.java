@@ -1,9 +1,9 @@
 
-package experimental;
+package libs.wavelets.experimental;
 
-import java.io.*;
+import libs.wavelets.sort.qsort;
 
-import sort.*;
+import java.io.PrintWriter;
 
 /**
   

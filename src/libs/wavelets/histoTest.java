@@ -1,6 +1,6 @@
+package libs.wavelets;
 
-
-import experimental.*;
+import libs.wavelets.experimental.*;
 
 /**
 <p>

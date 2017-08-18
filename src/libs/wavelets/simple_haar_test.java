@@ -1,3 +1,6 @@
+package libs.wavelets;
+
+import libs.wavelets.wavelets.simple_haar;
 
 /**
    Test code for the simple_haar.java wavelets code.
@@ -42,7 +45,7 @@ class simple_haar_test {
    */
   private void wavelet_test( double[] vals )
   {
-    wavelets.simple_haar haar = new wavelets.simple_haar();
+    simple_haar haar = new libs.wavelets.wavelets.simple_haar();
 
     System.out.println("test data: ");
     pr_vals( vals );

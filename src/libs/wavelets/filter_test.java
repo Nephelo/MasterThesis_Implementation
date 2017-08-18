@@ -1,6 +1,6 @@
 
-import wavelet_util.*;
-import dataInput.*;
+import libs.wavelets.wavelet_util.*;
+import libs.wavelets.dataInput.*;
 
 /**
   Apply the gaussian filter to a time series (in this case

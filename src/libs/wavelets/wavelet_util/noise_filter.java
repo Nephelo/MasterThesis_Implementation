@@ -1,11 +1,12 @@
 
 
-package wavelet_util;
+package libs.wavelets.wavelet_util;
 
+import libs.wavelets.sort.*;
+import libs.wavelets.wavelets.inplace_haar;
+
+import java.io.PrintWriter;
 import java.util.Vector;
-import sort.*;
-
-import java.io.*;
 
 /**
   <p>
@@ -638,7 +639,7 @@ String class_name() { return "noise_filter"; }
   public void filter_time_series( String file_name, double ts[] )
   {
     double noise[] = new double[ ts.length ];
-    wavelets.inplace_haar haar = new wavelets.inplace_haar();
+    libs.wavelets.wavelets.inplace_haar haar = new inplace_haar();
     haar.wavelet_calc( ts );
     haar.order();
     gaussian_filter( ts, noise );

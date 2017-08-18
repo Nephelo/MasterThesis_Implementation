@@ -1,6 +1,8 @@
+package libs.wavelets;
 
-import wavelet_util.*;
-import dataInput.*;
+import libs.wavelets.wavelet_util.*;
+import libs.wavelets.dataInput.*;
+import libs.wavelets.wavelets.inplace_haar;
 
 /**
   Generate gnuplot files for the time series with
@@ -26,11 +28,11 @@ class spectrum_test {
 
 	if (vals != null) {
 
-	  wavelets.inplace_haar haar = new wavelets.inplace_haar();
+	  libs.wavelets.wavelets.inplace_haar haar = new inplace_haar();
 	  haar.wavelet_calc( vals );
 	  haar.order();
 
-	  coef_spectrum spectrum = new coef_spectrum();
+	  libs.wavelets.wavelet_util.coef_spectrum spectrum = new coef_spectrum();
 	  spectrum.filter_one_spectrum( vals );
 	  spectrum.only_one_spectrum( vals );
 	}

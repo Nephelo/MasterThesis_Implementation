@@ -1,7 +1,8 @@
+package libs.wavelets;
 
-import wavelet_util.*;
-import experimental.*;
-import dataInput.*;
+import libs.wavelets.wavelet_util.*;
+import libs.wavelets.experimental.*;
+import libs.wavelets.dataInput.*;
 
 /**
 <p>
@@ -90,8 +91,8 @@ class timeseries_histo {
 	
 	if (vals != null) {
 	  gnuplot3D pts;
-	  
-	  wavelets.inplace_haar haar = new wavelets.inplace_haar();
+
+        libs.wavelets.wavelets.inplace_haar haar = new libs.wavelets.wavelets.inplace_haar();
 	  haar.wavelet_calc( vals );
 	  haar.order();
 

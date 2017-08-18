@@ -1,5 +1,5 @@
 
-package wavelet_util;
+package libs.wavelets.wavelet_util;
 
 /**
  *

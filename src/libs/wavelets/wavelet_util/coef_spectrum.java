@@ -1,6 +1,8 @@
 
 
-package wavelet_util;
+package libs.wavelets.wavelet_util;
+
+import libs.wavelets.wavelets.inplace_haar;
 
 import java.io.*;
 
@@ -49,7 +51,7 @@ public class coef_spectrum extends plot {
   {
     PrintWriter prStr = OpenFile( file_name );
     if (prStr != null) {
-      wavelets.inplace_haar haar = new wavelets.inplace_haar();
+      libs.wavelets.wavelets.inplace_haar haar = new inplace_haar();
       haar.setWavefx( coef );
       haar.setIsOrdered();
       haar.inverse();      // calculate the inverse Haar transform

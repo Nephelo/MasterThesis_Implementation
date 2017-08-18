@@ -4,9 +4,9 @@ import data.HaarData;
 import privacyTransformation.PrivacyTransformationHandler;
 import util.DataUtil;
 
-public class Denoising implements PrivacyTransformation {
+public abstract class Denoising implements PrivacyTransformation {
 
-    private double mappedThreshold;
+    double mappedThreshold;
 
     @Override
     public HaarData transform(PrivacyTransformationHandler transformationHandler, HaarData haarData, double configurationValue) {
@@ -14,7 +14,7 @@ public class Denoising implements PrivacyTransformation {
 
         HaarData transformedData = haarData.clone();
         for(int level = 0; level < haarData.getCoefficients().length; level++) {
-            transformedData.setLevel(level, adaptLevel(transformationHandler, transformedData, level));
+            transformedData.setLevel(level, adaptLevel(transformationHandler, transformedData, level, mappedThreshold));
         }
         return transformedData;
     }
@@ -24,18 +24,7 @@ public class Denoising implements PrivacyTransformation {
         this.mappedThreshold = DataUtil.mapToInterval(configurationValue, 0, maxCoefficientForThreshold);
     }
 
-
-    private double[] adaptLevel(PrivacyTransformationHandler transformationHandler, HaarData haarData, int level) {
-        double[] dataForThreshold = transformationHandler.getCoefficentsForThreshold()[level];
-        double[] dataRow = haarData.getCoefficients()[level];
-        for(int i = 0; i < dataRow.length; i++) {
-            if(Math.abs(dataForThreshold[i]) < mappedThreshold) {
-                dataRow[i] = 0;
-                transformationHandler.setFixedValue(level, i);
-            }
-        }
-        return dataRow;
-    }
+    protected abstract double[] adaptLevel(PrivacyTransformationHandler transformationHandler, HaarData haarData, int level, double mappedThreshold);
 
     @Override
     public double getConfigurationValue(PrivacyTransformationHandler transformationHandler, HaarData haarData, double configurationValue) {
@@ -43,8 +32,14 @@ public class Denoising implements PrivacyTransformation {
         return mappedThreshold;
     }
 
-    @Override
-    public String getDescription() {
-        return "Removed coefficients with threshold " + mappedThreshold;
+    protected int getSwitchingSign(PrivacyTransformationHandler transformationHandler, int level, int i) {
+        int sign = 1;
+        if(transformationHandler.isSwitched(level, i)) {
+            sign = -1;
+        }
+        return sign;
     }
+
+    public abstract String getDescription();
+
 }

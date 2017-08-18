@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Arrays;
+
 public class TimeSeries {
 
     private double[] values;
@@ -14,6 +16,10 @@ public class TimeSeries {
 
     public int size() {
         return values.length;
+    }
+
+    public void cutToNumber(int number) {
+        this.values = Arrays.copyOfRange(this.values, 0, number);
     }
 
     public double[] calculateMeans() {

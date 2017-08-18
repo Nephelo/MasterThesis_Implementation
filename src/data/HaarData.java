@@ -45,6 +45,11 @@ public class HaarData {
         this.mean = mean;
     }
 
+
+    public int getNumberOfValues() {
+        return (int) Arrays.stream(coefficients).mapToDouble(coeff -> coeff.length).sum() + 1;
+    }
+
     public HaarData clone() {
         HaarData copiedObject = new HaarData(coefficients.length, coefficients[0].length);
         copiedObject.setMean(mean);
@@ -93,4 +98,5 @@ public class HaarData {
         result = 31 * result + Arrays.deepHashCode(coefficients);
         return result;
     }
+
 }

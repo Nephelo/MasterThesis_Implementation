@@ -1,8 +1,8 @@
 
 import java.io.*;
-import wavelets.*;
-import wavelet_util.*;
-import dataInput.*;
+import libs.wavelets.*;
+import libs.wavelets.wavelet_util.*;
+import libs.wavelets.dataInput.*;
 
 /**
 <p>

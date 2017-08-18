@@ -6,11 +6,16 @@ import util.DataUtil;
 import util.SwitchingUtil;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Swapping implements PrivacyTransformation {
 
 
-    private ArrayList<Integer> levels;
+    private List<Integer> levels;
     private int mappedValue;
 
     @Override
@@ -46,12 +51,12 @@ public class Swapping implements PrivacyTransformation {
         return configurationString;
     }
 
-    //TODO: By increasing value also swap on different levels
     private void mapValueToLevels(HaarData haarData, double configurationValue) {
-        mappedValue = (int) DataUtil.mapToInterval(configurationValue, 0, haarData.getCoefficients().length - 1);
-        ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(mappedValue);
-        this.levels = arr;
+        Set<Integer> levels = IntStream.range(0, haarData.getCoefficients().length).boxed().collect(Collectors.toSet());
+        SortedSet<SortedSet<Integer>> powerSet = DataUtil.sortedPowerSet(levels);
+
+        mappedValue = (int) DataUtil.mapToInterval(configurationValue, 0, powerSet.size() - 1);
+        this.levels = ((SortedSet<Integer>) powerSet.toArray()[mappedValue]).stream().collect(Collectors.toList());
     }
 
     @Override

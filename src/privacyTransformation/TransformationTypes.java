@@ -1,9 +1,12 @@
 package privacyTransformation;
 
 public enum TransformationTypes {
-    AddNoise,
+    AddNoiseGauss,
+    AddNoiseLaplace,
     CutJumps,
-    Denoising,
+    DenoiseSoft,
+    DenoiseHard,
+    DenoiseNGG,
     IdentityTransformation,
     RemoveLevel,
     Swapping

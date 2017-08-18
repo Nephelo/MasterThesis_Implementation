@@ -1,8 +1,10 @@
 
-package wavelet_util;
+package libs.wavelets.wavelet_util;
 
 import java.io.*;
-import sort.qsort;
+
+import libs.wavelets.wavelet_util.plot;
+import libs.wavelets.sort.qsort;
 
 /**
 <p>

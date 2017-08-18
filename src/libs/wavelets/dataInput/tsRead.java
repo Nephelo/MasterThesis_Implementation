@@ -1,8 +1,8 @@
 
-package dataInput;
+package libs.wavelets.dataInput;
 
 import java.io.*;
-import double_vec.*;
+import libs.wavelets.double_vec.*;
 
 /**
 <p>

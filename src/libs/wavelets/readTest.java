@@ -1,5 +1,6 @@
+package libs.wavelets;
 
-import dataInput.*;
+import libs.wavelets.dataInput.*;
 
 /**
   Test the time series read code.
