@@ -31,7 +31,7 @@ public class AddNoiseGauss implements PrivacyTransformation {
 
     private void mapParameters(PrivacyTransformationHandler transformationHandler, HaarData coeffs, double configurationValue) {
         double maxCoefficientForThreshold = transformationHandler.getMaxCoefficientForThresholds(coeffs);
-        mappedSigma = DataUtil.mapToInterval(configurationValue, 0, maxCoefficientForThreshold);
+        mappedSigma = DataUtil.mapToInterval(configurationValue, maxCoefficientForThreshold, 0);
         mappedPhi = DataUtil.mapToInterval(configurationValue, 0, MAX_PHI);
     }
 
